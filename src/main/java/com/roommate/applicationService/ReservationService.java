@@ -1,7 +1,7 @@
 package com.roommate.applicationService;
 
+import com.roommate.domain.model.Reservation;
 import org.springframework.stereotype.Service;
-import roommate.domain.model.Reservation;
 import java.time.LocalDateTime;
 import java.util.List;
 

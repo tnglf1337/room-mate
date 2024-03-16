@@ -1,5 +1,15 @@
 package com.roommate.adapter.web.controller;
 
+import com.roommate.adapter.web.form.AdminEquipmentForm;
+import com.roommate.adapter.web.form.AdminSeatEquipForm;
+import com.roommate.adapter.web.form.AdminSeatForm;
+import com.roommate.adapter.web.form.DeleteForm;
+import com.roommate.applicationService.EquipmentRepository;
+import com.roommate.applicationService.ReservationRepository;
+import com.roommate.applicationService.SeatRepository;
+import com.roommate.domain.model.Equipment;
+import com.roommate.domain.model.Seat;
+import com.roommate.security.AdminOnly;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
@@ -10,20 +20,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import roommate.applicationService.EquipmentRepository;
-import roommate.applicationService.ReservationRepository;
-import roommate.applicationService.SeatRepository;
-import roommate.adapters.web.form.*;
-import roommate.config.AdminOnly;
-import roommate.domain.model.Equipment;
-import roommate.domain.model.Seat;
 
 @Controller
 @RequestMapping(path = "admin")
 public class AdminController {
-    @Autowired ReservationRepository reservationRepository;
-    @Autowired EquipmentRepository equipmentRepository;
-    @Autowired SeatRepository seatRepository;
+    @Autowired
+    ReservationRepository reservationRepository;
+    @Autowired
+    EquipmentRepository equipmentRepository;
+    @Autowired
+    SeatRepository seatRepository;
 
     @ModelAttribute("countReservations")
     public int countReservations() {

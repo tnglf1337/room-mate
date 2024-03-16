@@ -1,6 +1,6 @@
 package com.roommate.applicationService;
 
-import roommate.domain.model.Reservation;
+import com.roommate.domain.model.Reservation;
 
 public class ReservationBuilder {
 

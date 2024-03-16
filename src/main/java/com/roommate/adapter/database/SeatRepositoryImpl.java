@@ -1,8 +1,8 @@
 package com.roommate.adapter.database;
 
+import com.roommate.applicationService.SeatRepository;
+import com.roommate.domain.model.Seat;
 import org.springframework.stereotype.Repository;
-import roommate.applicationService.SeatRepository;
-import roommate.domain.model.Seat;
 import java.util.List;
 
 @Repository

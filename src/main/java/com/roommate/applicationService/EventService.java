@@ -3,12 +3,12 @@ package com.roommate.applicationService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.roommate.domain.model.Reservation;
+import com.roommate.domain.model.keymaster.Access;
+import com.roommate.domain.model.keymaster.Key;
+import com.roommate.domain.model.keymaster.Room;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.reactive.function.client.WebClient;
-import roommate.domain.model.keymaster.Access;
-import roommate.domain.model.keymaster.Key;
-import roommate.domain.model.Reservation;
-import roommate.domain.model.keymaster.Room;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,10 +64,6 @@ public class EventService {
         return accesses;
 
     }
-
-
-
-
 
     public void setUuids(List<Room> rooms) {
 

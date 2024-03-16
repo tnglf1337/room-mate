@@ -1,13 +1,13 @@
 package com.roommate.adapter.web.controller;
 
+import com.roommate.applicationService.ReservationRepository;
+import com.roommate.applicationService.ReservationService;
+import com.roommate.domain.model.Reservation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import roommate.applicationService.ReservationRepository;
-import roommate.applicationService.ReservationService;
-import roommate.domain.model.Reservation;
 
 import java.util.List;
 
