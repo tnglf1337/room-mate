@@ -1,0 +1,14 @@
+p {
+    text-align: center;
+}
+
+.footer {
+    background-color: rgb(130, 26, 235);
+    margin-top: 670px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#heart {
+    color: red;
+}

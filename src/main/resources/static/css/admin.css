@@ -1,0 +1,17 @@
+.option-card {
+    border-style: none;
+    border-radius: 10px;
+    background: rgb(220,220,220);
+    background: linear-gradient(0deg, rgba(220,220,220,1) 0%, rgba(255,255,255,1) 100%, rgba(0,212,255,1) 100%);
+    box-shadow: 6px 6px 10px gray;
+    height: 45px;
+    margin: 5px 5px 10px 5px;
+}
+
+.option-card-action {
+    text-align: left;
+    font-size: 22px;
+    padding-left: 15px;
+    text-decoration: none;
+    color: black;
+}

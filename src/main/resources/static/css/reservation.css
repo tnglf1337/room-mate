@@ -1,0 +1,78 @@
+#seat-select {
+    width: 200px;
+}
+
+#equip-select {
+    margin-top: 40px;
+    width: 200px;
+}
+
+.selection {
+    margin-top: 50px;
+}
+
+.search-btn {
+    background-color: rgb(153, 51, 153);
+    display: inline-block; /* Damit die Breite und Höhe funktioniert */
+    width: 175px; /* Ihre gewünschte Breite */
+    height: 40px; /* Ihre gewünschte Höhe */
+    border-style: none;
+    border-radius: 10px;
+    text-align: center; /* Zentrieren des Texts innerhalb des Links */
+    line-height: 40px; /* Zentrieren des Texts vertikal */
+    text-decoration: none; /* Entfernen der Standard-Unterstreichung für Links */
+    color: white; /* Farbe des Texts im Link */
+}
+
+.search-btn:hover {
+    background-color: rgb(102, 0, 102); /* Ändern Sie die Hintergrundfarbe beim Hover */
+    color: white;
+}
+
+.btn-box {
+    margin-top: 40px;
+}
+
+#reserve-btn {
+    background-color: rgb(153, 51, 153);
+    display: inline-block;
+    width: 175px;
+    height: 40px;
+    border-style: none;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    color: white;
+}
+#reserve-btn:hover {
+    background-color: rgb(102, 0, 102);
+    color: white;
+}
+
+.time-select {
+    margin-top: 40px;
+    width: 150px;
+}
+
+.date-select {
+    margin-top: 40px;
+}
+
+#res-btn-box {
+    margin-top: 40px;
+}
+
+.search-result-display {
+    margin-top: 40px;
+    border-style: none;
+    border-radius: 10px;
+}
+
+#reserve-link {
+    color: black;
+}
+
+#reserve-link:hover {
+    color: white;
+}
