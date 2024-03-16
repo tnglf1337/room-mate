@@ -1,0 +1,67 @@
+package com.roommate.domain.model;
+
+import org.springframework.data.annotation.Id;
+
+public class Reservation{
+
+    @Id
+    private final Long reservation_id;
+
+    private final String reservation_date;
+
+    private final String time_begin;
+
+    private final String time_end;
+
+    private final String user_name;
+
+    private final String realName;
+
+    private final String seat;
+
+    public Reservation(Long reservation_id, String reservation_date, String time_begin, String time_end, String user_name, String realName, String seat) {
+        this.reservation_id = reservation_id;
+        this.reservation_date = reservation_date;
+        this.time_begin = time_begin;
+        this.time_end = time_end;
+        this.user_name = user_name;
+        this.realName = realName;
+        this.seat = seat;
+    }
+
+    public Long getReservation_id() {
+        return reservation_id;
+    }
+
+    public String getDate() {
+        return reservation_date;
+    }
+
+    public String getTime_begin() {
+        return time_begin;
+    }
+
+    public String getTime_end() {
+        return time_end;
+    }
+
+    public String getUser_name() {
+        return user_name;
+    }
+
+    public String getSeat() {
+        return seat;
+    }
+
+    @Override
+    public String toString() {
+        return "Reservation{" +
+                "reservation_id=" + reservation_id +
+                ", reservation_date=" + reservation_date +
+                ", time_begin=" + time_begin +
+                ", time_end=" + time_end +
+                ", user_name='" + user_name + '\'' +
+                ", seat='" + seat + '\'' +
+                '}';
+    }
+}
