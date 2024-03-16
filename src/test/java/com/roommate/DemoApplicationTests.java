@@ -1,4 +1,4 @@
-package com.roommate.demo;
+package com.roommate;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
