@@ -4,6 +4,7 @@ import com.roommate.domain.model.Seat;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 
+@Repository
 public interface SeatRepository{
 
     List<Seat> findAll();

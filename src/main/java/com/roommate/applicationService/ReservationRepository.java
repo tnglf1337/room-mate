@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface ReservationRepository{
     List<Reservation> findAll();
     List<Reservation> findReservationsByUserName(String user_name);
