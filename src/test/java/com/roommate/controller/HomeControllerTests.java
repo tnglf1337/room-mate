@@ -5,6 +5,12 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import com.roommate.adapter.web.controller.HomeController;
+import com.roommate.applicationService.ReservationRepository;
+import com.roommate.applicationService.ReservationService;
+import com.roommate.domain.model.Reservation;
+import com.roommate.helper.TestUtil;
+import com.roommate.helper.WithMockOAuth2User;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.jupiter.api.DisplayName;
@@ -13,12 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
-import roommate.applicationService.ReservationRepository;
-import roommate.adapters.web.controller.HomeController;
-import roommate.applicationService.ReservationService;
-import roommate.domain.model.Reservation;
-import roommate.helper.TestUtil;
-import roommate.helper.WithMockOAuth2User;
+
 import java.util.List;
 
 

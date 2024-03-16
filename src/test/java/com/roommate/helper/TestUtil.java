@@ -1,7 +1,8 @@
 package com.roommate.helper;
 
-import roommate.applicationService.ReservationBuilder;
-import roommate.domain.model.Reservation;
+import com.roommate.applicationService.ReservationBuilder;
+import com.roommate.domain.model.Reservation;
+
 import java.util.LinkedList;
 import java.util.List;
 

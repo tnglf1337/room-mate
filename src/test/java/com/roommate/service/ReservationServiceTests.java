@@ -6,15 +6,15 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import com.roommate.applicationService.LocalDatePreparer;
+import com.roommate.applicationService.ReservationRepository;
+import com.roommate.applicationService.ReservationService;
+import com.roommate.domain.model.Reservation;
+import com.roommate.helper.TestUtil;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.data.jdbc.DataJdbcTest;
-import roommate.applicationService.ReservationRepository;
-import roommate.applicationService.LocalDatePreparer;
-import roommate.applicationService.ReservationService;
-import roommate.domain.model.Reservation;
-import roommate.helper.TestUtil;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -89,7 +89,4 @@ public class ReservationServiceTests {
         assertFalse(beforeIsNotPossible);
         assertFalse(afterIsNotPossible);
     }
-
-
-
 }
