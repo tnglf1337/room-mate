@@ -2,6 +2,8 @@ package com.roommate.domain.model;
 
 import org.springframework.data.annotation.Id;
 
+import java.util.Objects;
+
 public class Reservation{
 
     @Id
@@ -63,5 +65,17 @@ public class Reservation{
                 ", user_name='" + user_name + '\'' +
                 ", seat='" + seat + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Reservation that)) return false;
+        return Objects.equals(getReservation_id(), that.getReservation_id()) && Objects.equals(reservation_date, that.reservation_date) && Objects.equals(getTime_begin(), that.getTime_begin()) && Objects.equals(getTime_end(), that.getTime_end()) && Objects.equals(getUser_name(), that.getUser_name()) && Objects.equals(realName, that.realName) && Objects.equals(getSeat(), that.getSeat());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getReservation_id(), reservation_date, getTime_begin(), getTime_end(), getUser_name(), realName, getSeat());
     }
 }
