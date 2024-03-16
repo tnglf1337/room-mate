@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments :: head"></head>
+<body>
+  <header th:replace="fragments :: header"></header>
+
+  <div th:object="${addSeatForm}">
+    <h2>Neuen Sitzplatz hinzufügen</h2>
+    <form method="post" th:action="@{'/admin/add_seat'}" >
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon2" for="room_number">Platz-Nr.:</span>
+        <input type="text" class="form-control" aria-describedby="basic-addon1" id="room_number" th:field="*{room_number}">
+        <button type="submit" class="btn btn-primary">hinzufügen</button>
+      </div>
+    </form>
+    <small th:if="${#fields.hasErrors('room_number')}" th:errors="*{room_number}"></small>
+  </div>
+
+  <footer th:replace="fragments :: footer"></footer>
+</body>
+</html>

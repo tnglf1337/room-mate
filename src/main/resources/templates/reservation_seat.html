@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head th:replace="fragments :: head"></head>
+
+
+
+  <body>
+    <header>
+      <div th:replace="fragments :: header"></div>
+    </header>
+
+
+      <div class="container">
+        <div class="row">
+          <div class="col-2"></div>
+
+          <div class="col-8">
+            <h1>Schritt 1: Sitzplatz auswählen</h1>
+
+            <div class="selection">
+              <form method="post" th:action="@{'/reservation_seat'}" th:object="${reservationSeatForm}">
+                <div id="seat-select">
+                  <label for="seat">Platz-Nr.:</label>
+                  <select class="form-select form-select-sm" id="seat" name="seat">
+                    <option  th:each="seat: ${seats}" th:value="${seat.getRoomNumber()}" >
+                      <span th:text="${seat.getRoomNumber()}"></span>
+                    </option>
+                  </select>
+                </div>
+
+
+                <div id="equip-select">
+                  <h2>Equipment:</h2>
+                  <div class="form-check" th:each="equipment : ${equipmentList}">
+                    <input class="form-check-input" type="checkbox" th:value="${equipment.getEquipment_name()}" for="flexCheckDefault" name="checkbox">
+                    <label class="form-check-label" id="flexCheckDefault">
+                      <span th:text="${equipment.getEquipment_name()}"></span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="col btn-box">
+                  <button type="submit" class="search-btn">Suche</button>
+                </div>
+
+              </form>
+            </div>
+
+            <div th:if="${postRequestDone}" id="search-result-display" >
+              <div>
+                <p>Du wolltest Platz-Nr. <span th:text="${desiredSeat}"></span> mit folgendem Equipment: <span th:text="${desiredEquipment}"> :P </span></p>
+              </div>
+              <div th:if="${seatsAvailable}" class="text-bg-success p-3 search-result-display">
+                <p>Platz <span th:text="${desiredSeat}"></span> besitzt gewünschtes Equipment! <a class="link-body-emphasis" id="reserve-link" href="/reservation_date">Reservieren?</a></p>
+              </div>
+
+              <div th:unless="${seatsAvailable}" class="text-bg-danger p-3 search-result-display">
+                <p>Leider besitzt der Platz nicht die gewünschte Ausstattung.</p>
+                <p>Diese Plätze haben Ausstattung: <span th:text="${desiredEquipment}"></span></p></p>
+
+                <ol>
+                  <l th:each="seat : ${seatsWithEquipment}">
+                    <p><span th:text="${seat}"></span></p>
+                  </l>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-2"></div>
+        </div>
+      </div>
+
+
+
+
+
+    <footer>
+      <div th:replace="fragments :: footer"></div>
+    </footer>
+  </body>
+</html>

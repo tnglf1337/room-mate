@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments :: head"></head>
+<body>
+  <header>
+    <div th:replace="fragments :: header"></div>
+  </header>
+
+  <div class="container">
+
+    <h1>Reservierungen für Platz <span th:text="${seat}"></span></h1>
+
+    <a href="/reservation_date">Zurück zur Reservierung</a>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Datum</th>
+          <th>von</th>
+          <th>bis</th>
+        </tr>
+      </thead>
+
+      <tbody th:each="res : ${reservationList}">
+        <tr>
+          <td>
+            <span th:text="${res.getDate()}"></span>
+          </td>
+          <td>
+            <span th:text="${res.getTime_begin()}"></span>
+          </td>
+          <td>
+            <span th:text="${res.getTime_end()}"></span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </div>
+
+  <footer>
+    <div th:replace="fragments :: footer"></div>
+  </footer>
+</body>
+</html>

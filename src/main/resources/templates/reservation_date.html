@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments :: head"></head>
+
+
+
+<body>
+  <header>
+    <div th:replace="fragments :: header"></div>
+  </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-2"> </div>
+
+        <div class="col-8">
+          <h1>Schritt 2: Datum auswählen</h1>
+          <form method="post" th:action="@{'/reservation_date'}" th:object="${reservationDateForm}">
+            <div class="date-select">
+              <label for="date">Datum</label>
+              <input type="date"
+                     id="date"
+                     name="date"
+                     th:attr="min=${minDate}, value=${minDate}"
+                     value="2023-11-26" min="2023-11-26"/>
+            </div>
+
+            <div class="row">
+              <div class="time-select">
+                <label for="timeBegin">von:</label>
+                <select class="form-select form-select-sm" id="timeBegin" name="timeBegin">
+                  <option value="08:00" selected>08:00</option>
+                  <option value="09:00">09:00</option>
+                  <option value="10:00">10:00</option>
+                  <option value="11:00">11:00</option>
+                  <option value="12:00">12:00</option>
+                  <option value="13:00">13:00</option>
+                  <option value="14:00">14:00</option>
+                  <option value="15:00">15:00</option>
+                  <option value="16:00">16:00</option>
+                  <option value="17:00">17:00</option>
+                  <option value="18:00">18:00</option>
+                  <option value="19:00">19:00</option>
+                  <option value="20:00">20:00</option>
+                </select>
+              </div>
+
+              <div class="time-select">
+                <label for="timeEnd">bis:</label>
+                <select class="form-select form-select-sm"  id="timeEnd" name="timeEnd">
+                  <option value="08:00" selected>08:00</option>
+                  <option value="09:00">09:00</option>
+                  <option value="10:00">10:00</option>
+                  <option value="11:00">11:00</option>
+                  <option value="12:00">12:00</option>
+                  <option value="13:00">13:00</option>
+                  <option value="14:00">14:00</option>
+                  <option value="15:00">15:00</option>
+                  <option value="16:00">16:00</option>
+                  <option value="17:00">17:00</option>
+                  <option value="18:00">18:00</option>
+                  <option value="19:00">19:00</option>
+                  <option value="20:00">20:00</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col" id="res-btn-box">
+              <button type="submit" id="reserve-btn">Reservieren</button>
+            </div>
+          </form>
+
+          <div th:if="${postRequestDone}">
+            <div th:unless="${reservationPossible}">
+              <p>Reservierung nicht zu diesem Zeitpunkt möglich. Alle Reservierungen für Platz <span th:text="${desiredSeat}">0.0.1</span> <a th:href="@{/seat/{seatId}(seatId=${desiredSeat})}" >anzeigen</a>.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-2"></div>
+      </div>
+    </div>
+
+  <footer>
+    <div th:replace="fragments :: footer"></div>
+  </footer>
+</body>
+</html>

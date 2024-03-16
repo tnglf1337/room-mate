@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments :: head"></head>
+<body>
+<header th:replace="fragments :: header"></header>
+
+  <div th:object="${addSeatEquipForm}">
+    <h2>Equipment zu Platz hinzufügen</h2>
+    <form method="post" th:action="@{'/admin/add_seat_with_equipment'}" >
+      <div class="input-group mb-3">
+        <div>
+          <select class="form-select form-select-sm"  name="room_number">
+            <option  th:each="s: ${seatList}" th:value="${s.getRoomNumber()}" >
+              <span th:text="${s.getRoomNumber()}"></span>
+            </option>
+          </select>
+        </div>
+
+
+        <div>
+          <select class="form-select form-select-sm"  name="equipment_name">
+            <option  th:each="e: ${equipmentList}" th:value="${e.getEquipment_name()}" >
+              <span th:text="${e.getEquipment_name()}"></span>
+            </option>
+          </select>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">hinzufügen</button>
+      </div>
+    </form>
+  </div>
+
+  <footer th:replace="fragments :: footer"></footer>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head th:replace="fragments :: head"></head>
+
+
+
+    <body>
+        <header>
+            <div th:replace="fragments :: header"></div>
+        </header>
+
+        <div class="container">
+
+            <div id="welcome-head">
+                <h1>Willkommen zurück <span th:text="${realName}">Max Mustermann</span> (<small th:text="${gitHubLogin}"></small>)</h1>
+            </div>
+
+            <div th:if="${reservationAvailable}">
+                <h3>Deine Reservierungen:</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Datum</th>
+                            <th scope="col">Begin</th>
+                            <th scope="col">Ende</th>
+                            <th scope="col">Platz-Nr.</th>
+                            <th scope="col">Option</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="single-reservation" th:each="res : ${userReservations}">
+                            <td>
+                                <span th:text="${res.getDate()}"></span>
+                            </td>
+                            <td>
+                                <span th:text="${res.getTime_begin()}"></span>
+                            </td>
+                            <td>
+                                <span th:text="${res.getTime_end()}"></span>
+                            </td>
+                            <td>
+                                <span th:text="${res.getSeat()}"></span>
+                            </td>
+                            <td>
+                                <form method="post" th:action="@{'/home/delete'}">
+                                    <input type="hidden" th:name="idToDelete" th:value="${res.reservation_id}" />
+                                    <button type="submit" class="btn btn-outline-danger">entfernen</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div th:unless="${reservationAvailable}">
+                <p>Du hast bisher noch keine Reservierungen gebucht.</p>
+            </div>
+
+            <a href="/reservation_seat" id="reservation-link" class="add-reserve-btn"> + Neue Reservierung </a>
+        </div>
+
+        <footer>
+            <div th:replace="fragments :: footer"></div>
+        </footer>
+    </body>
+</html>
