@@ -1,7 +1,7 @@
 package com.roommate.applicationService;
 
+import com.roommate.domain.model.Equipment;
 import org.springframework.stereotype.Repository;
-import roommate.domain.model.Equipment;
 import java.util.List;
 
 @Repository

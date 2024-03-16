@@ -1,7 +1,8 @@
 package com.roommate.applicationService;
 
+import com.roommate.domain.model.Reservation;
 import org.springframework.stereotype.Repository;
-import roommate.domain.model.Reservation;
+
 import java.util.List;
 
 public interface ReservationRepository{

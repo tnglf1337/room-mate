@@ -1,7 +1,7 @@
 package com.roommate.applicationService;
 
+import com.roommate.domain.model.Seat;
 import org.springframework.stereotype.Repository;
-import roommate.domain.model.Seat;
 import java.util.List;
 
 public interface SeatRepository{

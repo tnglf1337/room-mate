@@ -1,8 +1,8 @@
 package com.roommate.adapter.database;
 
+import com.roommate.applicationService.ReservationRepository;
+import com.roommate.domain.model.Reservation;
 import org.springframework.stereotype.Repository;
-import roommate.applicationService.ReservationRepository;
-import roommate.domain.model.Reservation;
 import java.util.List;
 
 @Repository
